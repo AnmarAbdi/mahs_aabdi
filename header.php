@@ -1,12 +1,5 @@
 <?php
-session_start();
-$_SESSION['username'] = "AnmarAbdi";
-echo $_SESSION['username'];
-if (!isset($_SESSION['username'])) {
-    echo "You are not logged in!";
-} else {
-    echo " You are logged in!";
-}
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,17 +32,45 @@ if (!isset($_SESSION['username'])) {
   </head>
 
   <body>
-    <h3><a href="index.php">Home</a></h3>
-    <h3><a href="calendar.php">Calendar</a></h3>
-    <h3><a href="calculator.php">Calculator</a></h3>
-    <h3><a href="switch.php">Switch</a></h3>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.php">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <form action="includes/login.inc.php" method="post">
-        <input type="text" name="mailuid" placeholder="Username/Email">
-        <input type="password" name="pwd" placeholder="Password">
-        <button type="submit" name="login-submit">Login</button>
-    </form>
-    <a href="signup.php">Signup</a>
-    <form action="includes/logout.inc.php" method="post">
-        <button type="submit" name="logout-submit">Logout</button>
-    </form>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="calendar.php">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="calculator.php">Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="switch.php">Switch</a>
+        </li>
+      </ul>
+      <?php
+        if (isset($_SESSION['userId'])) {
+          echo '<form action="includes/logout.inc.php" method="post">
+          <button class="btn btn-outline-info" type="submit" name="logout-submit">Logout</button>
+      </form>';
+        }
+        else {
+          echo '<form action="includes/login.inc.php" method="post">
+          <input type="text" name="mailuid" placeholder="Username/Email">
+          <input type="password" name="pwd" placeholder="Password">
+          <button class="btn btn-outline-info" type="submit" name="login-submit">Login</button>
+      </form>
+      <a href="signup.php" class="btn btn-outline-info">Signup</a>';
+        }
+      ?>
+      
+    </div>
+  </nav>
+
+    
+    
