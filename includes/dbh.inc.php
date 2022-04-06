@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:3306";
 $dBUsername = "mahs_aabdi"; 
 $dBPassword = "mustangs";
 $dBName = "mahs_aabdi";
