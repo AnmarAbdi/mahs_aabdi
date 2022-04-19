@@ -24,11 +24,18 @@ if (isset($_POST['login-submit'])) {
                     header("Location: ../index.php?error=wrongpwd");
                     exit();
                 }
-                else if ($pwdCheck == true) {
+                else if ($pwdCheck == true && $row["usertype"]=="user") {
                     session_start();
                     $_SESSION['userId'] = $row['idUsers'];
                     $_SESSION['userUid'] = $row['uidUsers'];
                     header("Location: ../index.php?login=success");
+                    exit();
+                }
+                else if ($pwdCheck == true && $row["usertype"]=="admin") {
+                    session_start();
+                    $_SESSION['userId'] = $row['idUsers'];
+                    $_SESSION['userUid'] = $row['uidUsers'];
+                    header("Location: ../adminhome.php?login=success");
                     exit();
                 }
                 else {
