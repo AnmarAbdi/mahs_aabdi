@@ -93,7 +93,7 @@ if(isset($_GET['delete_all'])){
             <td><a href="products.php" class="option-btn" style="margin-top: 0;">Continue Shopping</a></td>
             <td colspan="3">Grand Total</td>
             <td>$<?php echo $grand_total; ?>/-</td>
-            <td><a href="cart.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> Delete all </a></td>
+            <td><a href="cart.php?delete_all" onclick="return confirm('Are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> Delete all </a></td>
          </tr>
 
       </tbody>

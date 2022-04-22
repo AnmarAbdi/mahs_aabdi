@@ -2,6 +2,10 @@
 
 @include 'includes/dbh.inc.php';
 
+if ('uidUsers') != 'admin') {
+   header('Location: index.php');
+}
+
 if(isset($_POST['add_product'])){
    $p_name = $_POST['p_name'];
    $p_price = $_POST['p_price'];
