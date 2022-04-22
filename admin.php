@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 @include 'includes/dbh.inc.php';
 
 if(isset($_POST['add_product'])){
@@ -94,7 +91,7 @@ if(isset($message)){
    <h3>add a new product</h3>
    <input type="text" name="p_name" placeholder="enter the product name" class="box" required>
    <input type="number" name="p_price" min="0" placeholder="enter the product price" class="box" required>
-   <input type="file" name="p_image" accept="image/png, image/jpg, image/jpeg" class="box" required>
+   <input type="file" name="p_image" accept="image/png, image/jpg, image/jpeg" class="box">
    <input type="submit" value="add the product" name="add_product" class="btn">
 </form>
 
